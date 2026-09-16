@@ -1,36 +1,9 @@
-# Template.mn MVP v3
+# Template.mn — v4 Minimal
 
-Энэ хувилбар нь **payment-ready demo architecture** юм.
+Монгол хэл дээрх minimalist, хар + шар өнгийн Template.mn storefront.
 
-## Орсон зүйлс
-- Store + search + category filter
-- Cart
-- Checkout page
-- QPay / MonPay payment method UI
-- Demo order creation
-- Demo paid → success → download flow
-- Admin dashboard
-- Seller dashboard
-- localStorage ашигласан demo data
+## Файлууд
+Бүх HTML/CSS/JS файлыг repository-ийн root хэсэгт байрлуулна. `template-mn-v4-minimal-mn.zip` файлыг өөрийг нь GitHub Pages дээр upload хийхгүй.
 
-## Жинхэнэ production болгох
-Frontend дээр QPay client secret хийхгүй.
-
-Backend:
-1. `POST /api/orders` — order үүсгэнэ
-2. `POST /api/payments/qpay/invoice` — QPay invoice үүсгэнэ
-3. `POST /api/payments/qpay/callback` — callback авна
-4. callback ирсний дараа QPay `payment/check` ашиглан төлбөрийг баталгаажуулна
-5. status=PAID болсон үед secure, expiring download URL үүсгэнэ
-6. Admin authentication + seller authentication + database + object storage нэмнэ
-
-QPay-ийн одоогийн Merchant V2 docs:
-https://developer.qpay.mn/mn/docs/merchant?version=2.0.0
-
-QPay-ийн Quick QR docs:
-https://developer.qpay.mn/mn/docs/quick-qr?version=2.0.0
-
-MonPay Open API:
-https://developers.monpay.mn/
-
-**Анхаарах:** API credentials, merchant ID, production URLs болон contract-ийн шаардлагуудыг өөрийн merchant account-аас баталгаажуулж байж production-д тохируулна.
+## Анхаарах
+QPay / MonPay хэсэг одоогоор demo UI. Жинхэнэ төлбөр авахын тулд merchant эрх, backend, invoice үүсгэх, callback болон payment verification хэрэгтэй.
