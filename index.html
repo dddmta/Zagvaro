@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Template.mn — Монгол Template Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">Template<span>.mn</span></a>
+    <nav>
+      <a href="#products">Template-үүд</a>
+      <a href="admin.html">Admin</a>
+      <a href="seller.html">Seller</a>
+      <button id="cartBtn" class="btn small">Сагс (<span id="cartCount">0</span>)</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap heroGrid">
+    <div>
+      <span class="badge">MONGOLIAN DIGITAL MARKETPLACE</span>
+      <h1>Монгол бизнест<br><em>бэлэн template.</em></h1>
+      <p>Social media, menu, real estate, online shop болон freelancer-д зориулсан бэлэн digital бүтээгдэхүүн.</p>
+      <a class="btn" href="#products">Template үзэх →</a>
+    </div>
+    <div class="heroCard">
+      <div class="miniLabel">DEMO PAYMENT FLOW</div>
+      <div class="flow"><b>1</b> Сонгох</div>
+      <div class="flow"><b>2</b> QPay / MonPay</div>
+      <div class="flow"><b>3</b> Төлбөр баталгаажих</div>
+      <div class="flow"><b>4</b> Download</div>
+      <small>Жинхэнэ API key оруулаагүй тул энэ хувилбар demo горимд ажиллана.</small>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="section wrap">
+  <div class="sectionHead">
+    <div><span class="eyebrow">STORE</span><h2>Бүтээгдэхүүн</h2></div>
+    <input id="search" placeholder="Template хайх...">
+  </div>
+  <div id="filters" class="filters"></div>
+  <div id="productsGrid" class="grid"></div>
+</section>
+
+<section class="section dark">
+  <div class="wrap sellerCta">
+    <div><span class="eyebrow">SELL WITH US</span><h2>Өөрийн template-ээ зар.</h2><p>Seller dashboard demo-оор бүтээгдэхүүн нэмэх урсгалыг туршаарай.</p></div>
+    <a class="btn light" href="seller.html">Seller dashboard →</a>
+  </div>
+</section>
+</main>
+
+<div id="cartModal" class="modal hidden"><div class="modalBox"><button class="x" onclick="closeCart()">×</button><h2>Таны сагс</h2><div id="cartItems"></div><div class="total">Нийт: <b id="cartTotal">0₮</b></div><button class="btn full" onclick="checkout()">Төлбөр рүү үргэлжлүүлэх</button></div></div>
+<div id="productModal" class="modal hidden"><div class="modalBox"><button class="x" onclick="closeProduct()">×</button><div id="productDetail"></div></div></div>
+<script src="script.js"></script>
+</body>
+</html>

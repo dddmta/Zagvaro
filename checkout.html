@@ -1,0 +1,9 @@
+<!doctype html><html lang="mn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Checkout — Template.mn</title><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="wrap nav"><a class="logo" href="index.html">Template<span>.mn</span></a></div></header>
+<main class="section wrap narrow"><span class="eyebrow">CHECKOUT</span><h1>Төлбөр</h1><div id="summary" class="formCard"></div>
+<div class="formCard"><h3>Төлбөрийн арга</h3><label><input type="radio" name="pay" value="qpay" checked> QPay — API integration pending</label><label><input type="radio" name="pay" value="monpay"> MonPay — API integration pending</label><label><input type="radio" name="pay" value="manual"> Банкны шилжүүлэг — demo</label><button class="btn full" onclick="payDemo()">Demo төлбөр хийх</button><p class="muted tiny">Production дээр серверээс invoice үүсгэж, callback-аар төлбөрийг баталгаажуулсны дараа download эрх өгнө.</p></div>
+</main><script>
+const cart=JSON.parse(localStorage.getItem('tm_cart')||'[]');const sum=cart.reduce((a,x)=>a+x.price,0);
+document.querySelector('#summary').innerHTML='<h3>Захиалга</h3>'+cart.map(x=>'<div class="row"><span>'+x.name+'</span><b>'+x.price.toLocaleString()+'₮</b></div>').join('')+'<hr><div class="row"><b>Нийт</b><b>'+sum.toLocaleString()+'₮</b></div>';
+function payDemo(){if(!cart.length)return alert('Сагс хоосон байна.');const method=document.querySelector('input[name=pay]:checked').value;let orders=JSON.parse(localStorage.getItem('tm_orders')||'[]');const id='TM-'+Date.now();orders.push({id,items:cart,total:sum,method,status:'PAID_DEMO',createdAt:new Date().toISOString()});localStorage.setItem('tm_orders',JSON.stringify(orders));localStorage.removeItem('tm_cart');location.href='success.html?order='+encodeURIComponent(id)}
+</script></body></html>
