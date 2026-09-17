@@ -1,13 +1,18 @@
-# Zagvaro — v1 Minimal
+# Zagvaro v2 — Minimal Marketplace
 
-Монгол хэл дээрх minimalist, хар + шар өнгийн digital template marketplace.
+Zagvaro is a Mongolian digital template marketplace MVP.
 
-## GitHub Pages
-Бүх HTML/CSS/JS файлыг repository-ийн root хэсэгт байрлуулна. ZIP файлыг өөрийг нь GitHub Pages дээр upload хийхгүй.
+## Included
+- Minimal black + yellow storefront
+- 10 demo template products
+- Search, category filters and sorting
+- Product detail modal
+- Local cart
+- Checkout / seller / admin demo pages
+- QPay / MonPay-ready UI (demo until merchant/API integration is approved)
 
-## Одоогийн хувилбар
-QPay/MonPay хэсэг нь demo UI. Production төлбөр болон автоматаар татах secure download нь backend/API шаарддаг.
+## Free deployment
+Upload all files to the existing GitHub Pages repository. The repository can remain `template-mn`; only the visible brand is Zagvaro.
 
-## Brand
-- Site: Zagvaro
-- Suggested domain: zagvaro.mn
+## Production note
+Do not place QPay secrets in frontend code. Production payments and automatic downloads require a secure backend.
